@@ -8,6 +8,9 @@ const SaleReports = () =>   import('../components/report/saleReports');
 const routes = [
   {
     path: '/',
+    redirect: {
+      name: "SaleReports"
+    },
     name: 'Report',
     component: Report,
     children: [
