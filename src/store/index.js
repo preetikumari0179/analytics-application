@@ -23,13 +23,9 @@ export default new Vuex.Store({
 
   },
   mutations: {
-    /* eslint-disable no-param-reassign */
     setSaleReports: (state, reports) => { state.reports = reports; },
-    /* eslint-disable no-param-reassign */
     setOrderReports: (state, reports) => { state.reports = reports; },
-    /* eslint-disable no-param-reassign */
     setPageViewsReports: (state, reports) => { state.reports = reports; },
-    /* eslint-disable no-param-reassign */
     setClickThruRateReports: (state, reports) => { state.reports = reports; },
   },
   actions: {

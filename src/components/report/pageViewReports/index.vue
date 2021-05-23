@@ -1,6 +1,6 @@
 <template>
   <div class='page-view-reports'>
-    <GChart
+    <g-chart
         type="LineChart"
         :data="pageViewDataReports"
         :options="chartOptions"

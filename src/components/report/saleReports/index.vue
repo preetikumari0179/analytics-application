@@ -4,9 +4,7 @@
         type="LineChart"
         :data="saleDataReports"
         :options="chartOptions"
-        name="sale"
     />
-
   </div>
 </template>
 

@@ -1,6 +1,6 @@
 <template>
   <div class='order-reports'>
-    <GOrderChart
+    <g-chart
         type="LineChart"
         :data="orderDataReports"
         :options="chartOptions"

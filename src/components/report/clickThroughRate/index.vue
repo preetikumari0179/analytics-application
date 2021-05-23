@@ -1,6 +1,6 @@
 <template>
   <div class='click-through-rate'>
-    <GChart
+    <g-chart
         type="LineChart"
         :data="clickThruRateDataReports"
         :options="chartOptions"
