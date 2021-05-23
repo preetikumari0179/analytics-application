@@ -1,6 +1,12 @@
 <template>
   <div class='sale-reports'>
-    Sale Reports
+    <GChart
+        type="LineChart"
+        :data="saleDataReports"
+        :options="chartOptions"
+        name="sale"
+    />
+
   </div>
 </template>
 

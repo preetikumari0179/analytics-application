@@ -1,13 +1,13 @@
 <template>
   <div class='order-reports'>
-    Order Reports
+    <GOrderChart
+        type="LineChart"
+        :data="orderDataReports"
+        :options="chartOptions"
+        name="order"
+    />
   </div>
 </template>
-<script>
-export default {
-  name: 'OrderReports',
-};
-</script>
+<script src="./orderReports.js"></script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style scoped src="./orderReports.css"></style>

@@ -1,6 +1,11 @@
 <template>
   <div class='page-view-reports'>
-    Page View Reports
+    <GChart
+        type="LineChart"
+        :data="pageViewDataReports"
+        :options="chartOptions"
+        name="sale"
+    />
   </div>
 </template>
 <script src="./pageViewReports.js"></script>

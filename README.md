@@ -1,4 +1,4 @@
-# analytics-application
+# vue2_application
 
 ## Project setup
 ```

@@ -1,11 +1,19 @@
 import { mapGetters, mapActions } from "vuex";
+import { GChart } from 'vue-google-charts';
+import gChartMixins from "../../../mixins/gChartMixins";
+
 export default {
     name: 'SaleReports',
-    computed: mapGetters(["allReport"]),
+    components: {
+        GChart
+    },
+    mixins: [gChartMixins],
+    computed: mapGetters(["saleDataReports"]),
     methods: {
-        ...mapActions(["getReports"]),
+        ...mapActions(["getSaleReports"]),
     },
     created() {
-        this.getReports();
+        this.getSaleReports();
+        this.setTitleAndSubtitle('sales');
     }
 };

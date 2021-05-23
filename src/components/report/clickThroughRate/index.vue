@@ -1,13 +1,13 @@
 <template>
   <div class='click-through-rate'>
-    Click Through Rate
+    <GChart
+        type="LineChart"
+        :data="clickThruRateDataReports"
+        :options="chartOptions"
+        name="click-through-rate"
+    />
   </div>
 </template>
-<script>
-export default {
-  name: 'ClickThroughRate',
-};
-</script>
+<script src="./clickThroughRate.js"></script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-</style>
+<style src="./clickThroughRate.css" scoped></style>
