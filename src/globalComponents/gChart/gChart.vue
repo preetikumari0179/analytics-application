@@ -98,15 +98,15 @@ export default {
       }
       const fn = this.createChart || createChart
       this.chartObject = fn(this.$refs.chart, chartsLib, this.type)
-      this.attachListeners()
-      return this.chartObject
+      this.attachListeners();
+      return this.chartObject;
     },
     attachListeners () {
       if (!this.events) return
       Object.entries(this.events).forEach(([event, listener]) => {
         chartsLib.visualization.events.addListener(this.chartObject, event, listener)
-      })
-    }
+      });
+    },
   }
 }
 </script>

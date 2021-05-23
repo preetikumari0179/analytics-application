@@ -10,6 +10,6 @@ export default {
   },
   created() {
     this.getClickThruRateReports();
-    this.setTitleAndSubtitle('clickThruRate');
+    this.setTitle('clickThruRate');
   },
 };

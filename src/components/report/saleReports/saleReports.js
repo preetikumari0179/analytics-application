@@ -10,6 +10,6 @@ export default {
   },
   created() {
     this.getSaleReports();
-    this.setTitleAndSubtitle('sales');
+    this.setTitle('sales');
   },
 };

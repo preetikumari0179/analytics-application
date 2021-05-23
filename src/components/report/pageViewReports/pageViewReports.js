@@ -10,6 +10,6 @@ export default {
   },
   created() {
     this.getPageViewReports();
-    this.setTitleAndSubtitle('pageViews');
+    this.setTitle('pageViews');
   },
 };
