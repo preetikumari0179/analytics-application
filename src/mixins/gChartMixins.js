@@ -6,6 +6,11 @@ export default {
         height: 400,
         pointSize: 10,
         legend: { position: 'top', alignment: 'center' },
+        vAxis: {
+          minorGridlines: {
+            multiple: 0,
+          },
+        }
       },
     };
   },
