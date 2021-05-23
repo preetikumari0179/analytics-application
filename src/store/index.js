@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import report from '../report.json';
+import report from '../report';
 
 Vue.use(Vuex);
 
@@ -23,11 +23,14 @@ export default new Vuex.Store({
 
   },
   mutations: {
-    setSaleReports: (state, reports) => (state.reports = reports),
-    setOrderReports: (state, reports) => (state.reports = reports),
-    setPageViewsReports: (state, reports) => (state.reports = reports),
-    setClickThruRateReports: (state, reports) => (state.reports = reports),
-
+    /* eslint-disable no-param-reassign */
+    setSaleReports: (state, reports) => { state.reports = reports; },
+    /* eslint-disable no-param-reassign */
+    setOrderReports: (state, reports) => { state.reports = reports; },
+    /* eslint-disable no-param-reassign */
+    setPageViewsReports: (state, reports) => { state.reports = reports; },
+    /* eslint-disable no-param-reassign */
+    setClickThruRateReports: (state, reports) => { state.reports = reports; },
   },
   actions: {
     async getSaleReports({ commit }) {
