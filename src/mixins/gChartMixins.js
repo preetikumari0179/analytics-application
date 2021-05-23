@@ -4,7 +4,7 @@ export default {
       chartOptions: {
         title: '',
         height: 400,
-        pointSize: 10,
+        pointSize: 4,
         legend: { position: 'top', alignment: 'center' },
         vAxis: {
           minorGridlines: {

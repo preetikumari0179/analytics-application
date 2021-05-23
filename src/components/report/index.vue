@@ -1,13 +1,15 @@
 <template>
   <div class='report-container'>
-    <select v-on:change="changeItem($event)">
-      <option
-          :value="dropDownValue.value"
-          v-for="dropDownValue in dropDownValues"
-          :key="dropDownValue.value">
-        {{dropDownValue.name}}
-      </option>
-    </select>
+    <div class="dropdown-block">
+      <select v-on:change="changeItem($event)">
+        <option
+            :value="dropDownValue.value"
+            v-for="dropDownValue in dropDownValues"
+            :key="dropDownValue.value">
+          {{dropDownValue.name}}
+        </option>
+      </select>
+    </div>
     <router-view></router-view>
   </div>
 </template>
@@ -54,4 +56,7 @@ export default {
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.dropdown-block{
+  background: #CCC;
+}
 </style>
