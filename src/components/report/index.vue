@@ -1,7 +1,7 @@
 <template>
   <div class='report-container'>
     <div class="dropdown-block">
-      <select v-on:change="changeItem($event)">
+      <select v-model="selected" v-on:change="changeItem($event)">
         <option
             :value="dropDownValue.value"
             v-for="dropDownValue in dropDownValues"
@@ -21,37 +21,53 @@ export default {
       dropDownValues: [
         {
           name: 'overall sales',
-          value: 'SaleReports'
+          value: 'SaleReports',
         },
         {
           name: 'overall orders',
-          value: 'OrderReports'
+          value: 'OrderReports',
         },
         {
           name: 'overall click through rate',
-          value: 'ClickThroughRate'
+          value: 'ClickThroughRate',
         },
         {
           name: 'overall page view',
-          value: 'PageViewReports'
+          value: 'PageViewReports',
         },
       ],
-      selected: ''
+      selected: '',
+      onReload: true,
     };
   },
   mounted() {
-    this.selected = this.dropDownValues[0].value;
+    // set dropdown value after component is added to the DOM.
+    if(this.$route.name) {
+      this.selected = this.$route.name;
+    } else {
+      this.selected = this.dropDownValues[0].value;
+
+    }
   },
   watch: {
-    selected: function(val) {
-      this.$router.push({ name: val});
-    }
+    // apply watch on selected data and preform navigation through router
+    selected(val) {
+      if(!this.onReload) {
+        this.$router.push({ name: val });
+      }
+    },
   },
   methods: {
+    /**
+     * @method: changeItem()
+     * @description: to set the value of selected by using event.target.value
+     * also set onReload to be false.
+     */
     changeItem: function changeItem(event) {
-      this.selected =  event.target.value;
-    }
-  }
+      this.selected = event.target.value;
+      this.onReload = false;
+    },
+  },
 };
 </script>
 <!-- Add "scoped" attribute to limit CSS to this component only -->

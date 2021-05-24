@@ -10,7 +10,7 @@ export default {
           minorGridlines: {
             multiple: 0,
           },
-        }
+        },
       },
     };
   },

@@ -3,43 +3,44 @@ import Vuex from 'vuex';
 import report from '../report';
 
 Vue.use(Vuex);
-
+/**
+ * @method: fetchReportData()
+ * @description: To get the formatted report according to type of recodes.
+ * @return reportdata in Array of array formatted by report.json
+ */
 function fetchReportData(type) {
-  let response = [];
+  let reportdata = [];
   const column = ['Year', type];
-  response = report.records.map((el) => [el.date, el[type]]);
-  response = [column, ...response];
-  return response;
+  reportdata = report.records.map(el => [el.date, el[type]]);
+  reportdata = [column, ...reportdata];
+  return reportdata;
 }
 export default new Vuex.Store({
   state: {
     reports: [],
   },
   getters: {
-    saleDataReports: (state) => state.reports,
-    orderDataReports: (state) => state.reports,
-    pageViewDataReports: (state) => state.reports,
-    clickThruRateDataReports: (state) => state.reports,
+    saleDataReports: state => state.reports,
+    orderDataReports: state => state.reports,
+    pageViewDataReports: state => state.reports,
+    clickThruRateDataReports: state => state.reports,
 
   },
   mutations: {
-    setSaleReports: (state, reports) => { state.reports = reports; },
-    setOrderReports: (state, reports) => { state.reports = reports; },
-    setPageViewsReports: (state, reports) => { state.reports = reports; },
-    setClickThruRateReports: (state, reports) => { state.reports = reports; },
+    setReports: (state, reports) => { state.reports = reports; },
   },
   actions: {
     async getSaleReports({ commit }) {
-      commit('setSaleReports', fetchReportData('sales'));
+      commit('setReports', fetchReportData('sales'));
     },
     async getOrderReports({ commit }) {
-      commit('setOrderReports', fetchReportData('orders'));
+      commit('setReports', fetchReportData('orders'));
     },
     async getPageViewReports({ commit }) {
-      commit('setPageViewsReports', fetchReportData('pageViews'));
+      commit('setReports', fetchReportData('pageViews'));
     },
     async getClickThruRateReports({ commit }) {
-      commit('setClickThruRateReports', fetchReportData('clickThruRate'));
+      commit('setReports', fetchReportData('clickThruRate'));
     },
   },
   modules: {
