@@ -1,10 +1,9 @@
-import { mapGetters, mapActions } from 'vuex';
+import { mapActions } from 'vuex';
 import gChartMixins from '../../../mixins/gChartMixins';
 
 export default {
   name: 'PagViewReports',
   mixins: [gChartMixins],
-  computed: mapGetters(['pageViewDataReports']),
   methods: {
     ...mapActions(['getPageViewReports']),
   },

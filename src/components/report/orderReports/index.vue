@@ -2,7 +2,7 @@
   <div class='order-reports'>
     <g-chart
         type="LineChart"
-        :data="orderDataReports"
+        :data="getReports"
         :options="chartOptions"
         name="order"
     />

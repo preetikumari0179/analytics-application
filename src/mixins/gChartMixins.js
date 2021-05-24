@@ -1,4 +1,7 @@
+import {mapGetters} from "vuex";
+
 export default {
+  computed: mapGetters(['getReports']),
   data() {
     return {
       chartOptions: {

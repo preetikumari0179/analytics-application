@@ -20,11 +20,7 @@ export default new Vuex.Store({
     reports: [],
   },
   getters: {
-    saleDataReports: state => state.reports,
-    orderDataReports: state => state.reports,
-    pageViewDataReports: state => state.reports,
-    clickThruRateDataReports: state => state.reports,
-
+    getReports: state => state.reports,
   },
   mutations: {
     setReports: (state, reports) => { state.reports = reports; },
@@ -42,7 +38,5 @@ export default new Vuex.Store({
     async getClickThruRateReports({ commit }) {
       commit('setReports', fetchReportData('clickThruRate'));
     },
-  },
-  modules: {
-  },
+  }
 });
