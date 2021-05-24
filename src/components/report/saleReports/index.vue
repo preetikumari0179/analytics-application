@@ -2,7 +2,7 @@
   <div class='sale-reports'>
     <GChart
         type="LineChart"
-        :data="getReports"
+        :data="getReports.sales"
         :options="chartOptions"
     />
   </div>

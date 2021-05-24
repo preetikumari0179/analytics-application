@@ -2,7 +2,7 @@
   <div class='page-view-reports'>
     <g-chart
         type="LineChart"
-        :data="getReports"
+        :data="getReports.pageViews"
         :options="chartOptions"
         name="sale"
     />

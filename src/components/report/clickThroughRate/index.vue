@@ -2,7 +2,7 @@
   <div class='click-through-rate'>
     <g-chart
         type="LineChart"
-        :data="getReports"
+        :data="getReports.clickThruRate"
         :options="chartOptions"
         name="click-through-rate"
     />

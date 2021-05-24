@@ -17,26 +17,42 @@ function fetchReportData(type) {
 }
 export default new Vuex.Store({
   state: {
-    reports: [],
+    reports: {
+      sales: null,
+      orders: null,
+      pageViews: null,
+      clickThruRate: null,
+    },
   },
   getters: {
     getReports: state => state.reports,
   },
   mutations: {
-    setReports: (state, reports) => { state.reports = reports; },
+    setSaleReports: (state, reports) => { state.reports.sales = reports; },
+    setOrderReports: (state, reports) => { state.reports.orders = reports; },
+    setPageViewsReports: (state, reports) => { state.reports.pageViews = reports; },
+    setClickThruRateReports: (state, reports) => { state.reports.clickThruRate = reports; },
   },
   actions: {
     async getSaleReports({ commit }) {
-      commit('setReports', fetchReportData('sales'));
+      if(!this.state.reports.sales) {
+        commit('setSaleReports', fetchReportData('sales'));
+      }
     },
     async getOrderReports({ commit }) {
-      commit('setReports', fetchReportData('orders'));
+      if(!this.state.reports.orders) {
+        commit('setOrderReports', fetchReportData('orders'));
+      }
     },
     async getPageViewReports({ commit }) {
-      commit('setReports', fetchReportData('pageViews'));
+      if(!this.state.reports.pageViews) {
+        commit('setPageViewsReports', fetchReportData('pageViews'));
+      }
     },
     async getClickThruRateReports({ commit }) {
-      commit('setReports', fetchReportData('clickThruRate'));
+      if(!this.state.reports.clickThruRate) {
+        commit('setClickThruRateReports', fetchReportData('clickThruRate'));
+      }
     },
   }
 });
